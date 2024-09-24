@@ -14,8 +14,7 @@ document.getElementById('donate-btn').addEventListener('click', function(){
 
       if(inputAmount <= mainBalanceNum){
         const remainingBalance = mainBalanceNum - inputAmount;
-        document.getElementById('main-balance').innerText= remainingBalance.toFixed(2);
-        
+        document.getElementById('main-balance').innerText= remainingBalance.toFixed(2);    
         const donateBalance = inputAmount + donatePreAmount
         document.getElementById('donate-pre-amount').innerText = donateBalance.toFixed(2);
         document.getElementById('my_modal_1').showModal();
@@ -52,9 +51,9 @@ document.getElementById('donate-btn2').addEventListener('click', function(){
 
       if(inputAmount <= mainBalanceNum){
         const remainingBalance = mainBalanceNum - inputAmount;
-        document.getElementById('main-balance').innerText= remainingBalance;       
+        document.getElementById('main-balance').innerText= remainingBalance.toFixed(2);       
         const donateBalance = inputAmount + preAmountNum
-        document.getElementById('donate-pre-amount2').innerText = donateBalance;
+        document.getElementById('donate-pre-amount2').innerText = donateBalance.toFixed(2);
         document.getElementById('my_modal_2').showModal();
         donateInput.value = "";
       }
@@ -88,9 +87,9 @@ document.getElementById('donate-btn3').addEventListener('click', function(){
 
       if(inputAmount <= mainBalanceNum){
         const remainingBalance = mainBalanceNum - inputAmount;
-        document.getElementById('main-balance').innerText= remainingBalance;       
+        document.getElementById('main-balance').innerText= remainingBalance.toFixed(2);       
         const donateNewBalance = inputAmount + preAmountNum
-        document.getElementById('donate-pre-amount3').innerText = donateNewBalance;
+        document.getElementById('donate-pre-amount3').innerText = donateNewBalance.toFixed(2);
         document.getElementById('my_modal_3').showModal();
         donateInput.value = "";
       }
