@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Link: TailwindCSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font: Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1dd100",
+            },
+            fontFamily: {
+              Inter: "Inter",
+              Lexend: "Lexend",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-[#f9f7f3] w-full mx-auto font-Lexend">
+    <section
+      class="bg-transparent backdrop-blur-xl sticky top-0 border border-b-gray-100"
+    >
+      <header class="pt-2 pb-3">
+        <nav class="flex items-center justify-around p-4">
+          <!-- Blog Button -->
+          <div>
+            <a href="./blog.html">
+              <button
+                class="bg-lime-400 text-black text-base font-bold px-7 py-3 rounded-lg"
+              >
+                Blog
+              </button>
+            </a>
+          </div>
+
+          <!-- Donate Bangladesh Title and Icon -->
+          <div class="md:flex items-center space-x-2">
+            <img src="./assets/logo.png" alt="" class="w-12 h-12" />
+            <span class="text-black font-bold text-xl hidden md:flex"
+              >Donate Bangladesh</span
+            >
+          </div>
+
+          <!-- Amount in BDT -->
+          <div class="flex items-center space-x-2">
+            <img src="./assets/coin.png" alt="" class="w-7 h-7" />
+            <span id="main-balance" class="text-gray-700 font-semibold text-xl"
+              >15000</span
+            >
+            <span class="text-gray-700 font-semibold text-xl">BDT</span>
+          </div>
+        </nav>
+      </header>
+      <!-- top two button -->
+      <section class="bg-white pt-6 pb-6">
+        <div class="flex items-center justify-center gap-5">
+          <button
+            id="donation-tab"
+            class="bg-[#B4F461] text-black font-bold px-6 py-4 rounded-lg text-xl"
+          >
+            Donation
+          </button>
+          <button
+            id="history-tab"
+            class="text-black font-bold px-6 py-4 rounded-lg text-xl border"
+          >
+            History
+          </button>
+        </div>
+      </section>
+    </section>
+    <!-- main section start -->
+    <main id="history-click-mainhide" class="bg-white pb-20 pt-4">
+      <!-- card section start 1-->
+      <section class="flex items-center justify-center mt-8">
+        <div
+          class="bg-white shadow-lg rounded-lg max-w-6xl mx-auto p-10 border"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <!-- Image Section -->
+            <div>
+              <img
+                src="./assets/noakhali.png"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Donation Info Section -->
+            <div class="p-6">
+              <!-- BDT and Icon -->
+              <div
+                class="flex items-center space-x-2 mb-4 bg-[#f3f3f3] w-36 h-11 py-3 px-4 rounded-md"
+              >
+                <img src="./assets/coin.png" alt="" class="w-6 h-6" />
+                <span id="donate-pre-amount" class="text-gray-600 font-medium"
+                  >1000
+                </span>
+                <span
+                  id="donate-pre-amount"
+                  class="text-gray-600 font-medium"
+                  <span
+                  >BDT</span
+                >
+              </div>
+
+              <!-- Donation Title -->
+              <h2 class="text-xl font-bold text-gray-900 mb-2">
+                Donate for Flood at Noakhali, Bangladesh
+              </h2>
+
+              <!-- Donation Description -->
+              <p class="text-gray-600 mb-4">
+                The recent floods in Noakhali have caused significant damage to
+                homes and infrastructure. Your donation will help provide
+                essential supplies to those affected by this disaster. Every
+                contribution, big or small, makes a difference. Please join us
+                in supporting the relief efforts and making a positive impact on
+                the lives of those in need.
+              </p>
+
+              <!-- Donation Input -->
+              <input
+                id="donate-input"
+                class="bg-white text-black w-full p-3 border rounded-lg mb-4"
+                type="text"
+                placeholder="Write Donation Amount"
+              />
+
+              <!-- Donate Now Button -->
+              <button
+                onclick="my_modal_1"
+                id="donate-btn"
+                class="bg-lime-400 text-black font-bold text-xl py-3 px-6 rounded-lg w-full d"
+              >
+                Donate Now
+              </button>
+              <!-- modal start-->
+              <dialog id="my_modal_1" class="modal">
+                <form
+                  id="modal1"
+                  method="dialog"
+                  class="modal-box px-5 py-5 flex flex-col justify-center items-center bg-white"
+                >
+                  <i
+                    class="fa-regular fa-circle-check text-6xl text-primary"
+                  ></i>
+                  <h3 class="font-bold text-4xl text-black my-4">
+                    Congratulations
+                  </h3>
+                  <img class="w-10 h-10" src="./assets/coin.png" alt="" />
+                  <p class="my-1 text-black font-medium">
+                    You Have Donate for Humankind
+                  </p>
+
+                  <h4 class="text-2xl text-black font-bold my-4">
+                    Successfully
+                  </h4>
+
+                  <button
+                    id="btn-continue"
+                    class="bg-gray-200 px-12 btn-md text-black text-base font-semibold rounded-lg"
+                  >
+                    Close confirmation
+                  </button>
+                </form>
+              </dialog>
+              <!-- modal end-->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- card section start 2-->
+      <section class="flex items-center justify-center mt-8">
+        <div
+          class="bg-white shadow-lg rounded-lg max-w-6xl mx-auto p-10 border"
+        >
+          <!-- Card Content -->
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/feni.png"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="p-6">
+              <!-- BDT and Icon -->
+              <div
+                class="flex items-center space-x-2 mb-4 bg-[#f3f3f3] w-36 h-11 py-3 px-4 rounded-md"
+              >
+                <img src="./assets/coin.png" alt="" class="w-6 h-6" />
+                <span id="donate-pre-amount2" class="text-gray-600 font-medium"
+                  >2000</span
+                >
+                <span class="text-gray-600 font-medium">BDT</span>
+              </div>
+
+              <!-- Donation Title -->
+              <h2 class="text-xl font-bold text-gray-900 mb-2">
+                Donate for Flood Relief in Feni,Bangladesh
+              </h2>
+
+              <!-- Donation Description -->
+              <p class="text-gray-600 mb-4">
+                The recent floods in Feni have devastated local communities,
+                leading to severe disruption and loss. Your generous donation
+                will help provide immediate aid, including food, clean water,
+                and medical supplies, to those affected by this calamity.
+                Together, we can offer crucial support and help rebuild lives in
+                the aftermath of this disaster. Every contribution counts
+                towards making a real difference. Please consider donating today
+                to assist those in urgent need.
+              </p>
+
+              <!-- Donation Input -->
+              <input
+                id="donate-input2"
+                class="bg-white text-black w-full p-3 border rounded-lg mb-4"
+                type="text"
+                placeholder="Write Donation Amount"
+              />
+
+              <!-- Donate Now Button -->
+              <button
+                onclick="my_modal_2"
+                id="donate-btn2"
+                class="bg-lime-400 text-black font-bold text-xl py-3 px-6 rounded-lg w-full"
+              >
+                Donate Now
+              </button>
+
+              <!-- modal start-->
+              <dialog id="my_modal_2" class="modal">
+                <form
+                  method="dialog"
+                  class="modal-box px-5 py-5 flex flex-col justify-center items-center bg-white"
+                >
+                  <i
+                    class="fa-regular fa-circle-check text-6xl text-primary"
+                  ></i>
+                  <h3 class="font-bold text-4xl text-black my-4">
+                    Congratulations
+                  </h3>
+                  <img class="w-10 h-10" src="./assets/coin.png" alt="" />
+                  <p class="my-1">You Have Donate for Humankind</p>
+
+                  <h4 class="text-2xl text-black font-bold my-4">
+                    Successfully
+                  </h4>
+
+                  <button
+                    id="btn-continue"
+                    class="bg-gray-200 px-12 btn-md text-black text-base font-semibold rounded-lg"
+                  >
+                    Close confirmation
+                  </button>
+                </form>
+              </dialog>
+              <!-- modal end-->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- card section start 3-->
+      <section class="flex items-center justify-center mt-8">
+        <div
+          class="bg-white shadow-lg rounded-lg max-w-6xl mx-auto p-10 border"
+        >
+          <!-- Card Content -->
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/quota-protest.png"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <!-- BDT and Icon -->
+              <div
+                class="flex items-center space-x-2 mb-4 bg-[#f3f3f3] w-36 h-11 py-3 px-4 rounded-md"
+              >
+                <img src="./assets/coin.png" alt="" class="w-6 h-6" />
+                <span id="donate-pre-amount3" class="text-gray-600 font-medium"
+                  >3500 BDT</span
+                >
+              </div>
+
+              <!-- Donation Title -->
+              <h2 class="text-xl font-bold text-gray-900 mb-2">
+                Aid for Injured in the Quota Movement
+              </h2>
+
+              <!-- Donation Description -->
+              <p class="text-gray-600 mb-4">
+                The recent Quota movement has resulted in numerous injuries and
+                significant hardship for many individuals. Your support is
+                crucial in providing medical assistance, rehabilitation, and
+                necessary supplies to those affected. By contributing, you help
+                ensure that injured individuals receive the care and support
+                they need during this challenging time. Every donation plays a
+                vital role in alleviating their suffering and aiding in their
+                recovery. Please consider making a donation to support these
+                brave individuals in their time of need.
+              </p>
+
+              <!-- Donation Input -->
+              <input
+                id="donate-input3"
+                class="bg-white text-black w-full p-3 border rounded-lg mb-4"
+                type="text"
+                placeholder="Write Donation Amount"
+              />
+
+              <!-- Donate Now Button -->
+              <button
+                onclick="my_modal_3"
+                id="donate-btn3"
+                class="bg-lime-400 text-black font-bold text-xl py-3 px-6 rounded-lg w-full"
+              >
+                Donate Now
+              </button>
+
+              <!-- modal start-->
+              <dialog id="my_modal_3" class="modal">
+                <form
+                  method="dialog"
+                  class="modal-box px-5 py-5 flex flex-col justify-center items-center bg-white"
+                >
+                  <i
+                    class="fa-regular fa-circle-check text-6xl text-primary"
+                  ></i>
+                  <h3 class="font-bold text-4xl text-black my-4">
+                    Congratulations
+                  </h3>
+                  <img class="w-10 h-10" src="./assets/coin.png" alt="" />
+                  <p class="my-1">You Have Donate for Humankind</p>
+
+                  <h4 class="text-2xl text-black font-bold my-4">
+                    Successfully
+                  </h4>
+
+                  <button
+                    id="btn-continue"
+                    class="bg-gray-200 px-12 btn-md text-black text-base font-semibold rounded-lg"
+                  >
+                    Close confirmation
+                  </button>
+                </form>
+              </dialog>
+              <!-- modal end-->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- history list -->
+    <div id="history-list" class="hidden bg-white pt-5 pb-60"></div>
+
+    <footer class="w-11/12 mx-auto">
+      <div class="h-32"></div>
+    </footer>
+    <script src="./js/assignment.js"></script>
+    <script src="./js/library.js"></script>
+  </body>
+</html>
