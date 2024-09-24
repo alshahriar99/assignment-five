@@ -14,10 +14,10 @@ document.getElementById('donate-btn').addEventListener('click', function(){
 
       if(inputAmount <= mainBalanceNum){
         const remainingBalance = mainBalanceNum - inputAmount;
-        document.getElementById('main-balance').innerText= remainingBalance;
+        document.getElementById('main-balance').innerText= remainingBalance.toFixed(2);
         
         const donateBalance = inputAmount + donatePreAmount
-        document.getElementById('donate-pre-amount').innerText = donateBalance;
+        document.getElementById('donate-pre-amount').innerText = donateBalance.toFixed(2);
         document.getElementById('my_modal_1').showModal();
         donateInput.value = "";
       }    
