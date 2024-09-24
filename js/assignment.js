@@ -29,7 +29,17 @@ document.getElementById('donate-btn').addEventListener('click', function(){
     historyItem.className = 'bg-white p-5 rounded-lg border border-gray-200 w-10/12 mx-auto mb-5 mt-5 space-y-4'
     historyItem.innerHTML= `
     <p class="text-xl font-bold text-black">${inputAmount} Taka is Donate for Flood at Noakhali, Bangladesh</p>
-    <p class="text-base text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    <p class="text-base text-gray-500">Date: ${new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Dhaka",
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false, 
+      timeZoneName: 'short' 
+    })}</p>
     `;
     const historyContainer = document.getElementById('history-list');
     historyContainer.insertBefore(historyItem , historyContainer.firstChild)
@@ -65,7 +75,17 @@ document.getElementById('donate-btn2').addEventListener('click', function(){
     historyItem.className = 'bg-white p-5 rounded-lg border border-gray-200 w-10/12 mx-auto mb-5 mt-5 space-y-4'
     historyItem.innerHTML= `
     <p class="text-xl font-bold text-black">${inputAmount} Taka is Donate for Flood Relief in Feni,Bangladesh</p>
-    <p class="text-base text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    <p class="text-base text-gray-500">Date: ${new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Dhaka",
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZoneName: 'short'
+    })}</p>
     `;
     const historyContainer = document.getElementById('history-list');
     historyContainer.insertBefore(historyItem , historyContainer.firstChild)
@@ -102,7 +122,17 @@ document.getElementById('donate-btn3').addEventListener('click', function(){
     historyItem.className = 'bg-white p-5 rounded-lg border border-gray-200 w-10/12 mx-auto mb-5 mt-5 space-y-4'
     historyItem.innerHTML= `
     <p class="text-xl font-bold text-black">${inputAmount} Taka is Aid for Injured in the Quota Movement</p>
-    <p class="text-base text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    <p class="text-base text-gray-500">Date: ${new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Dhaka",
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZoneName: 'short'
+    })}</p>
     `;
     const historyContainer = document.getElementById('history-list');
     historyContainer.insertBefore(historyItem , historyContainer.firstChild)
